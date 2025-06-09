@@ -1,22 +1,35 @@
+using Microsoft.EntityFrameworkCore;
+using RotaViagem.Application;
+using RotaViagem.Infra;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(options =>
+{
+    options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "API - Rota de Viagem",
+        Version = "v1",
+        Description = "API para cadastro de rotas entre aeroportos e cálculo da rota mais barata."
+    });
+});
+
+builder.Services.AddDbContext<RotaDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<IServicoDeRota, ServicoDeRota>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
         c.SwaggerEndpoint("/swagger/v1/swagger.json", "API Rota de Viagem v1");
-        c.RoutePrefix = ""; // Mostra Swagger direto na raiz: http://localhost:port/
     });
 
 }

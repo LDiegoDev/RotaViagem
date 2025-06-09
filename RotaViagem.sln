@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Api", "src\RotaV
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Tests", "tests\RotaViagem.Tests\RotaViagem.Tests.csproj", "{12BFBE92-1764-449E-9AA8-1223523601DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotaViagem.Infra", "src\RotaViagem.Infra\RotaViagem.Infra.csproj", "{14B43A9D-767E-43F5-8E8F-8BBF1AB4F637}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{12BFBE92-1764-449E-9AA8-1223523601DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12BFBE92-1764-449E-9AA8-1223523601DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12BFBE92-1764-449E-9AA8-1223523601DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14B43A9D-767E-43F5-8E8F-8BBF1AB4F637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14B43A9D-767E-43F5-8E8F-8BBF1AB4F637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14B43A9D-767E-43F5-8E8F-8BBF1AB4F637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14B43A9D-767E-43F5-8E8F-8BBF1AB4F637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
